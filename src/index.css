@@ -1,0 +1,153 @@
+:root {
+  font-family: 'Saira',  sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* animations.css */
+/* animations.css */
+
+/* Navbar fade-in animation */
+@keyframes fadeIn {
+  from {
+    height: 60px;
+  }
+  to {
+    height: 250px;
+    
+  }
+}
+
+/* Navbar fade-out animation */
+@keyframes fadeOut {
+  from {
+    height: 250px;
+  }
+  to {
+    height: 60px;
+  }
+}
+
+/* Apply the fadeIn animation when the element is visible */
+.animate-fadeIn {
+  animation: fadeIn 0.5s linear;
+  transition: height ease 0.6s;
+  animation-fill-mode: forwards;
+
+}
+
+/* Apply the fadeOut animation when the element is hidden */
+.animate-fadeOut {
+  animation: fadeOut 0.5s ease-in-out;
+  /* animation-fill-mode: forwards; */
+}
+
+/* Underline animation on hover */
+a {
+  position: relative;
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+  color: #ff0000; 
+}
+
+a::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #ff0000; /* Match the hover color */
+  transition: width 0.3s ease-in-out;
+}
+
+a:hover::before {
+  width: 100%;
+}
+
+/* External CSS or Tailwind CSS configuration */
+
+
+/* Define the gradient class */
+.gradient {
+  background: linear-gradient(to right, transparent, rgba(0, 0, 0, 10)); /* Adjust the gradient as needed */
+}
+
+.outlinedText{
+  -webkit-text-fill-color: rgb(255, 255, 255); /* Will override color (regardless of order) */
+  -webkit-text-stroke: 2px rgb(206, 204, 204);
+}
+
+.outlinedText:hover{
+  -webkit-text-stroke: 1px rgb(255, 0, 0);
+
+}
+
+
+@keyframes colorIn {
+  0%{
+    background-color: none;
+  }
+  50%{
+     background-color: rgb(29, 29, 29);
+
+  }
+  100%{
+    background: linear-gradient(to left, transparent, rgb(44, 44, 44)); 
+  }
+}
+@keyframes coloroutline {
+  from{
+
+  }
+  to{
+    -webkit-text-stroke: 1px rgb(255, 0, 0);
+
+  }
+}
+
+.animate-colorIn:hover {
+  animation: colorIn 0.5s linear;
+  animation-fill-mode: forwards;
+  cursor: grab;
+
+}
+
+.animate-colorIn:hover .outlinedText{
+  animation: coloroutline 0.5s linear;
+  /* transition: height ease 0.6s; */
+  animation-fill-mode: forwards;
+
+}
+@keyframes dottedImg {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.dotted-frame {
+  position: absolute;
+  left: 0;
+  animation: dottedImg 1.5s infinite linear;
+}
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
